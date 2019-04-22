@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="lzhui.css">
+</head>
+
+<body>
+    <button>点击</button>
+    <div id="table-box"></div>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./lzhui.js"></script>
+    <script>
+        $(function () {
+            var lzhui = new Lzhui();
+            $("button").on("click",function(){ 
+                lzhui.msg("添加成功")
+                lzhui.table({
+                    el:$("#table-box"),
+                    title:[{code:'xm',name:'姓名'},{code:'xb',name:'性别'},{code:'age',name:'年龄'}],
+                    data:[{xm:"aaa",xb:"man",age:23},{xm:"bbb",xb:"man",age:23},{xm:"ccc",xb:"man",age:23}],
+                    fn:function(){
+                        alert(2)
+                    }
+                })
+            })
+            lzhui.table({
+                el:$("#table-box"),
+                title:[{code:'xm',name:'姓名'},{code:'xb',name:'性别'},{code:'age',name:'年龄'}],
+                data:[{xm:"lzh",xb:"man",age:23},{xm:"lzh",xb:"man",age:23},{xm:"lzh",xb:"man",age:23}],
+                fn:function(){
+                    alert(1)
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>
